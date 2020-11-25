@@ -1,0 +1,21 @@
+#!/bin/bash
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y dirmngr gnupg apt-transport-https ca-certificates software-properties-common
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+sudo add-apt-repository 'deb [arch=amd64] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse'
+sudo apt install -y mongodb-org
+sudo systemctl enable --now mongod
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs gcc g++ make git
+git clone https://github.com/meanjs/mean
+cd mean
+sudo npm install -g yarn
+sudo npm install -g --unsafe-perm node-sass
+sudo npm install -g gulp
+sudo npm update
+sudo npm install
+sudo npm audit fix
+sudo rm -f server.js
+git clone https://github.com/Exochos/server
+sudo gulp
