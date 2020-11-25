@@ -17,5 +17,7 @@ sudo npm update
 sudo npm install
 sudo npm audit fix
 sudo rm -f server.js
-git clone https://github.com/Exochos/server
+https://github.com/Exochos/server
+sudo cd 
 sudo gulp
+
