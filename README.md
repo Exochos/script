@@ -7,3 +7,4 @@ sudo git clone https://github.com/Exochos/script/<br>
 cd script<br>
 sudo chmod +x meaninstall <br>
 sudo ./meaninstall <br>
+Server should be running on http port 80 at the end.
