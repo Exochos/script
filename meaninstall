@@ -10,12 +10,12 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs gcc g++ make git
 git clone https://github.com/meanjs/mean
 cd mean
-sudo npm install -g yarn
-sudo npm install -g --unsafe-perm node-sass
-sudo npm install -g gulp
-sudo npm update
-sudo npm install
-sudo npm audit fix
+sudo npm -sinstall -g yarn
+sudo npm -s install -g --unsafe-perm node-sass
+sudo npm -s install -g gulp
+sudo npm -s update
+sudo npm -s install
+sudo npm -s audit fix
 sudo rm -f server.js
 sudo git clone https://github.com/Exochos/server/
 cd server/
