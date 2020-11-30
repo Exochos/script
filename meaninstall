@@ -1,23 +1,40 @@
 #!/bin/bash
+
+#Filename: meaninstall
+#Author: Jeremy Ward - Further Work by Dai Hguyen
+
+#Update files
 sudo apt update -y
 sudo apt upgrade -y
+
+# Grab mongodb & start servcies
 sudo apt install -y dirmngr gnupg apt-transport-https ca-certificates software-properties-common
 wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 sudo add-apt-repository 'deb [arch=amd64] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse'
 sudo apt install -y mongodb-org
 sudo systemctl enable --now mongod
+
+#install node & others
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs gcc g++ make git
 sudo git clone https://github.com/meanjs/mean
+
+#Install yarn gulp and sass
 cd mean
 sudo npm install -gs yarn
 sudo npm install -gs --unsafe-perm node-sass
 sudo npm install -gs gulp
 sudo npm update -s
 sudo npm install -s
+
+#Fix all the errors
 sudo npm audit fix -s 
+
+#Remove the old server file grab Dai's server file
 sudo rm -f server.js
 sudo wget -O server.js https://raw.githubusercontent.com/ngocdai94/meanStack/main/server.js
+
+#Pull the front end & run everything
 cd public
 sudo git clone https://github.com/Titane73/it115-a5-g2-app.git
 cd .. 
