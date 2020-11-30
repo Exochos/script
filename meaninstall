@@ -8,18 +8,17 @@ sudo apt install -y mongodb-org
 sudo systemctl enable --now mongod
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs gcc g++ make git
-git clone https://github.com/meanjs/mean
+sudo git clone https://github.com/meanjs/mean
 cd mean
-sudo npm install -g yarn
-sudo npm install -g --unsafe-perm node-sass
-sudo npm install -g gulp
-sudo npm update
-sudo npm install
-sudo npm audit fix
+sudo npm install -gs yarn
+sudo npm install -gs --unsafe-perm node-sass
+sudo npm install -gs gulp
+sudo npm update -s
+sudo npm install -s
+sudo npm audit fix -s 
 sudo rm -f server.js
-sudo git clone https://github.com/Exochos/server/
-cd server/
-sudo cp server.js ../
-cd ..
+sudo wget -O server.js https://raw.githubusercontent.com/ngocdai94/meanStack/main/server.js
+cd public
+sudo git clone https://github.com/Titane73/it115-a5-g2-app.git
+cd .. 
 sudo gulp
-
