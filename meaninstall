@@ -3,7 +3,7 @@
 #Filename: meaninstall
 #Author: Jeremy Ward - Further Work by Dai Hguyen
 
-#Update files
+#Update local system files
 sudo apt update -y
 sudo apt upgrade -y
 
